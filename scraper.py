@@ -24,5 +24,11 @@
 # called "data".
 
 import sqlite3
+import pandas as pd
 
 conn = sqlite3.connect("selectfashion.sqlite")
+
+images = pd.read_sql("Select * from images",conn)
+
+images.to_sql("images", conn, if_exists='replace', index=False)
+
