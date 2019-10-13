@@ -27,8 +27,12 @@ import sqlite3
 import pandas as pd
 
 conn = sqlite3.connect("selectfashion.sqlite")
+conn2 = sqlite3.connect("data.sqlite")
 
 images = pd.read_sql("Select * from images",conn)
 
-images.to_sql("images", conn, if_exists='replace', index=False)
+product = pd.read_sql("Select * from product",conn)
+
+images.to_sql("images", conn2, if_exists='replace', index=False)
+product.to_sql("product", conn2, if_exists='replace', index=False)
 
