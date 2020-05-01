@@ -26,7 +26,7 @@
 import sqlite3
 import pandas as pd
 
-conn = sqlite3.connect("selectfashion10.sqlite")
+conn = sqlite3.connect("selectfashion11.sqlite")
 conn2 = sqlite3.connect("data.sqlite")
 
 images = pd.read_sql("Select * from images",conn)
