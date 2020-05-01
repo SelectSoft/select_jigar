@@ -30,9 +30,10 @@ conn = sqlite3.connect("selectfashion9.sqlite")
 conn2 = sqlite3.connect("data.sqlite")
 
 images = pd.read_sql("Select * from images",conn)
-
+JigarKey = pd.read_sql("Select * from JigarKey",conn)
 product = pd.read_sql("Select * from product",conn)
 
 images.to_sql("images", conn2, if_exists='replace', index=False)
 product.to_sql("product", conn2, if_exists='replace', index=False)
+JigarKey.to_sql("JigarKey", conn2, if_exists='replace', index=False)
 
